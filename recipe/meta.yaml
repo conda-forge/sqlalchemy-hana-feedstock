@@ -1,5 +1,5 @@
 {% set name = "sqlalchemy-hana" %}
-{% set version = "0.5.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sqlalchemy-hana-{{ version }}.tar.gz
-  sha256: 473fab3488fd885212aeb2dba2603091fe4d9212487f7ff826c59d8bf6ce4504
+  sha256: 769e7adfc27f0f60ae7652f0597e034b75b4ca898339a01f899341d0a49b4aba
 
 build:
   noarch: python
