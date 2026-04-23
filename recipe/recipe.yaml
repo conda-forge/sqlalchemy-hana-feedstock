@@ -2,18 +2,18 @@ schema_version: 1
 
 context:
   name: sqlalchemy-hana
-  version: 0.5.0
+  version: "3.0.3"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/sqlalchemy-hana-${{ version }}.tar.gz
-  sha256: 473fab3488fd885212aeb2dba2603091fe4d9212487f7ff826c59d8bf6ce4504
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 37ea5033628e1682037dd13dc5b9e4c585dfa28bc2bdbc02f816059147262bae
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
@@ -24,6 +24,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - sqlalchemy >=1.0.0
+    - hdbcli >=2.19
 
 tests:
   - python:
