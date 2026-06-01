@@ -2,18 +2,18 @@ schema_version: 1
 
 context:
   name: sqlalchemy-hana
-  version: 0.5.0
+  version: "4.6.0"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/sqlalchemy-hana-${{ version }}.tar.gz
-  sha256: 473fab3488fd885212aeb2dba2603091fe4d9212487f7ff826c59d8bf6ce4504
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 6546bd8c4af8c31fa8a4c0d854ea706d8d51c2abc39019f5a238fbf7d5d85d5e
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
